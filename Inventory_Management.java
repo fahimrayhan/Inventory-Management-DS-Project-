@@ -13,7 +13,6 @@ import java.util.Scanner;
  */
 public class Inventory_Management {
     
-    
     public static void main(String[] args) {
        
         
@@ -21,8 +20,10 @@ public class Inventory_Management {
 //         Add Items, Order Items; Generate Report; Monthly Report;
         
         C_LinkedList list = new C_LinkedList();
+        C_LinkedList.Node node;
         C_Queue queue = new C_Queue();
-        Pull_Stack stack = new Pull_Stack();
+        C_Queue.Node qNode;
+        Pull_Stack stack;
         
         
         while(true)
@@ -38,10 +39,60 @@ public class Inventory_Management {
             
             if(cs==1)
             {
+                int No = scan.nextInt();
+                String Name = scan.next();
+                double Price = scan.nextDouble();
+                String details = scan.next();
+                int Quantity = scan.nextInt();
+                
+                node = new C_LinkedList.Node(No, Name, Price, details, Quantity);
+
+                list.addAtEnd(node);
                 
             }
             else if(cs==2)
             {
+                
+                String name = scan.next();
+                String email = scan.next();
+                String phone = scan.next();
+                String Address = scan.next();
+                
+                System.out.println("Select Item:");
+                list.print();
+                
+                System.out.println("Enter Item Code: ");
+                int item = scan.nextInt();
+
+        //      Order Details
+                
+                while(true)
+                {
+                    System.out.println("1: Place Order. 2: Cancel");
+                    
+                    int ch = scan.nextInt();
+                    
+                    if(ch==1)
+                    {
+                        C_LinkedList.Node list2;
+                        list2 = list.search(item);
+                        
+                        qNode = new C_Queue.Node(name, email, phone, Address, list2);
+                        
+                        queue.enqueue(qNode);
+                        
+                    }
+                    else if(ch==2)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        System.out.println("Choose Correct Option");
+                    }
+                }
+                
+                
                 
             }
             else if(cs==3)
@@ -50,7 +101,7 @@ public class Inventory_Management {
             }
             else if(cs==4)
             {
-                
+                break;
             }
             else{
                 System.out.println("Please Choose Valid Options");

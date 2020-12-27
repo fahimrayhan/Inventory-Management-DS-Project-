@@ -17,25 +17,25 @@ public class C_Queue {
         
         String name;
         String email;
-        int[] phone;
+        String phone;
         String Address;
         
         
 //      Order Details
         
-        String order_details;
-        int quantity;
+        int Item;
+        String p_name;
         double price;
         Node next;
 
-        public Node(String name, String email, int[] phone, String Address, String order_details, int quantity, double price) {
+        public Node(String name, String email, String phone, String Address, C_LinkedList.Node node) {
             this.name = name;
             this.email = email;
             this.phone = phone;
             this.Address = Address;
-            this.order_details = order_details;
-            this.quantity = quantity;
-            this.price = price;
+            this.Item = node.No;
+            this.p_name = node.Name;
+            this.price = node.Price;
         }    
         
     }

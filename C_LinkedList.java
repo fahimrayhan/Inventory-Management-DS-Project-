@@ -12,16 +12,16 @@ package miniproject_cse207;
  */
 public class C_LinkedList {
     
-    static class Node
+   public static class Node
     {
         int No;
-        char Name;
+        String Name;
         double Price;
         String details;
         int Quantity;
         Node next;
 
-        public Node(int No, char Name, double Price, String details, int Quantity) {
+        public Node(int No, String Name, double Price, String details, int Quantity) {
             this.No = No;
             this.Name = Name;
             this.Price = Price;
@@ -62,7 +62,20 @@ public class C_LinkedList {
         head = head.next;
     }
     
-    
+    public Node search(int no)
+    {
+       Node temp;
+       temp = head;
+       while(temp != null)
+       {
+           if(temp.No == no)
+           {
+               return temp;
+           }
+           temp = temp.next;
+       }
+        return null;
+    }
     
     
    public void print()
