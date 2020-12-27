@@ -39,10 +39,15 @@ public class Inventory_Management {
             
             if(cs==1)
             {
+                System.out.println("Enter Item SKU: ");
                 int No = scan.nextInt();
+                System.out.println("Enter Item Name: ");
                 String Name = scan.next();
+                System.out.println("Enter Item Price: ");
                 double Price = scan.nextDouble();
+                System.out.println("Enter Item Details: ");
                 String details = scan.next();
+                System.out.println("Enter Item Quantity: ");
                 int Quantity = scan.nextInt();
                 
                 node = new C_LinkedList.Node(No, Name, Price, details, Quantity);
@@ -52,17 +57,15 @@ public class Inventory_Management {
             }
             else if(cs==2)
             {
-                
+                System.out.println("Enter Customer Name: ");
                 String name = scan.next();
+                System.out.println("Enter Customer Email Address: ");
                 String email = scan.next();
+                System.out.println("Enter Customer Phone Number: ");
                 String phone = scan.next();
+                System.out.println("Enter Customer Address: ");
                 String Address = scan.next();
                 
-                System.out.println("Select Item:");
-                list.print();
-                
-                System.out.println("Enter Item Code: ");
-                int item = scan.nextInt();
 
         //      Order Details
                 
@@ -74,12 +77,31 @@ public class Inventory_Management {
                     
                     if(ch==1)
                     {
+                        System.out.println("Select Item:");
+                        list.print();
+
+                        System.out.println("Enter Item Code: ");
+                        int item = scan.nextInt();
+                        
                         C_LinkedList.Node list2;
                         list2 = list.search(item);
                         
                         qNode = new C_Queue.Node(name, email, phone, Address, list2);
                         
                         queue.enqueue(qNode);
+                        
+                        System.out.println("Order Placed Successfully!");
+                        System.out.println("Do you want to make another purchase?");
+                        System.out.println("1: Yes, 2: No");
+                        int x = scan.nextInt();
+                        if(x==1)
+                        {
+                            continue;
+                        }
+                        else if(x==2)
+                        {
+                            break;
+                        }
                         
                     }
                     else if(ch==2)

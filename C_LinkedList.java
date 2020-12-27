@@ -83,7 +83,7 @@ public class C_LinkedList {
        Node temp = head;
        while(temp!=null)
        {
-           System.out.println("");
+           System.out.println(temp.No+": "+temp.Name+", "+temp.Price+", "+temp.Quantity+", "+temp.details);
            temp = temp.next;
        }
        
