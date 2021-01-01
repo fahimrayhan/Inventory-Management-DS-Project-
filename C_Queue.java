@@ -36,7 +36,14 @@ public class C_Queue {
             this.Item = node.No;
             this.p_name = node.Name;
             this.price = node.Price;
-        }    
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" + "Name=" + name + ", Email=" + email + ", Phone=" + phone + ", Address=" + Address + ",\n Item No=" + Item + ", Product Name=" + p_name + ", Price=" + price + '}';
+        }
+        
+        
         
     }
     

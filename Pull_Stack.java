@@ -11,13 +11,17 @@ package miniproject_cse207;
  */
 public class Pull_Stack {
     
-    static class Node {
-        int value;
-        Node next;
+    int count = 0;
     
-        public Node(int value) {
-            this.value = value;
+    static class Node {
+        
+        C_LinkedList.Node list2;
+        Node next;
+
+        public Node(C_LinkedList.Node list2) {
+            this.list2 = list2;
         }
+
     }
 
     private Node first = null;
@@ -25,18 +29,38 @@ public class Pull_Stack {
     public void push(Node node) {
         node.next = first;
         first = node;
+        count++;
     }
 
-    public void pop() {
+    public Node pop() {
+        Node temp;
+        temp = first;
         first = first.next;
+        return temp;
     }
     
   public void print() {
-      Node node = first;
-    while(node != null) {
-        System.out.println("|"+node.value+"|");
-        node = node.next;
+      
+      Node temp = first;
+      System.out.println("\t/// Last Sold Item ///");
+      temp = pop();
+      System.out.println("Item No: "+temp.list2.No+", Item Name: "+temp.list2.Name+", Price: "+temp.list2.Price+", Category: "+temp.list2.Category);
+       
+      
+      System.out.println("\t/// Monthly Report ///");
+      System.out.println("Total Item Sold: "+count);
+      
+      int sum = (int) temp.list2.Price;
+      
+      while(temp != null) {
+        
+            
+            temp = pop();
+            sum += temp.list2.Price;
+            System.out.println("Item No: "+temp.list2.No+", Item Name: "+temp.list2.Name+", Price: "+temp.list2.Price+", Category: "+temp.list2.Category);
+            temp = temp.next;
     }
+      System.out.println("Gross Sale: "+sum);
   }
 
 }

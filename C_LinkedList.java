@@ -17,15 +17,15 @@ public class C_LinkedList {
         int No;
         String Name;
         double Price;
-        String details;
+        String Category;
         int Quantity;
         Node next;
 
-        public Node(int No, String Name, double Price, String details, int Quantity) {
+        public Node(int No, String Name, double Price, String Category, int Quantity) {
             this.No = No;
             this.Name = Name;
             this.Price = Price;
-            this.details = details;
+            this.Category = Category;
             this.Quantity = Quantity;
         }
         
@@ -62,6 +62,8 @@ public class C_LinkedList {
         head = head.next;
     }
     
+    
+    
     public Node search(int no)
     {
        Node temp;
@@ -76,6 +78,20 @@ public class C_LinkedList {
        }
         return null;
     }
+    public Node searchCat(String cat)
+    {
+       Node temp;
+       temp = head;
+       while(temp != null)
+       {
+           if(temp.Category.equals(cat))
+           {
+               return temp;
+           }
+           temp = temp.next;
+       }
+        return null;
+    }
     
     
    public void print()
@@ -83,7 +99,7 @@ public class C_LinkedList {
        Node temp = head;
        while(temp!=null)
        {
-           System.out.println(temp.No+": "+temp.Name+", "+temp.Price+", "+temp.Quantity+", "+temp.details);
+           System.out.println("Item No: "+temp.No+", Product Name: "+temp.Name+", Price: "+temp.Price+", Category: "+temp.Category+", Stock: "+temp.Quantity+"\n");
            temp = temp.next;
        }
        
