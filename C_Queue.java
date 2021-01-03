@@ -38,10 +38,10 @@ public class C_Queue {
             this.price = node.Price;
         }
 
-        @Override
-        public String toString() {
-            return "Node{" + "Name=" + name + ", Email=" + email + ", Phone=" + phone + ", Address=" + Address + ",\n Item No=" + Item + ", Product Name=" + p_name + ", Price=" + price + '}';
-        }
+//        @Override
+//        public String toString() {
+//            return "Node{" + "Name=" + name + ", Email=" + email + ", Phone=" + phone + ", Address=" + Address + ",\n Item No=" + Item + ", Product Name=" + p_name + ", Price=" + price + '}';
+//        }
         
         
         

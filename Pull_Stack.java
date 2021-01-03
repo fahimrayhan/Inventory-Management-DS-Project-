@@ -47,7 +47,7 @@ public class Pull_Stack {
       System.out.println("Item No: "+temp.list2.No+", Item Name: "+temp.list2.Name+", Price: "+temp.list2.Price+", Category: "+temp.list2.Category);
        
       
-      System.out.println("\t/// Monthly Report ///");
+      System.out.println("\t/// Monthly Report ///\n");
       System.out.println("Total Item Sold: "+count);
       
       int sum = (int) temp.list2.Price;
@@ -60,6 +60,8 @@ public class Pull_Stack {
             System.out.println("Item No: "+temp.list2.No+", Item Name: "+temp.list2.Name+", Price: "+temp.list2.Price+", Category: "+temp.list2.Category);
             temp = temp.next;
     }
+      
+      System.out.println("\t /// Gross Sale ///\n");
       System.out.println("Gross Sale: "+sum);
   }
 

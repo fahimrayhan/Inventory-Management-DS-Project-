@@ -101,7 +101,9 @@ public class Inventory_Management {
                         
                         System.out.println("\t //// Order Details ////");
                         
-                        System.out.println(qNode.toString());
+                        System.out.println("User Details: Name:"+qNode.name+".\nPhone:"+qNode.phone+".\nEmail:"+qNode.email);
+                        System.out.println("Delivery Address: "+qNode.Address);
+                        System.out.println("Prdouct Orderd "+list2.Name+". Price: "+list2.Price+". Type: "+list2.Category);
                         
                         sNode = new Pull_Stack.Node(list2);
                         
